@@ -1,0 +1,15 @@
+{
+  "name": "Audiophile Shop",
+  "version": "1.0.0",
+  "description": "markup project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Lida Shubitidze",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.57.1"
+  }
+}

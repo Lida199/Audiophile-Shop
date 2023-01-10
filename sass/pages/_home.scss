@@ -1,0 +1,194 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+.speaker-details {
+    @include some-details;
+    padding: 55px 0;
+    background-color: $color-primary;
+    background-image: url(../assets/home/desktop/pattern-circles.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    a {
+        padding: 1.4rem 2.95rem;
+        color: $color-white;
+        background-color: $color-black;
+        border: 1px solid $color-black;
+        &:hover {
+            color: $color-black;
+            background-color: $color-white;
+        }
+    }
+    img {
+        width: 169.09px;
+    }
+    h4 {
+        @include fonts(3.6rem, 4rem, 0.013rem, 700, uppercase);
+        color: $color-white;
+        text-align: center;
+        margin-top: 32px;
+        margin-bottom: 24px;
+    }
+    p {
+        color: $color-white;
+        opacity: 75%;
+        padding: 0 2.4rem;
+        text-align: center;
+        margin-bottom: 24px;
+    }
+}
+.speaker-z7-details {
+    @include some-details;
+    padding: 10.1rem 0 10.1rem 2.4rem;
+    background-image: url(../assets/home/mobile/image-speaker-zx7.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    background-position: right;  
+    a {
+        padding: 1.4rem 2.95rem;
+        color: $color-black;
+        border: 1px solid $color-black;
+        &:hover {
+            color: $color-white;
+            background-color: $color-black;
+        }
+    }
+    h4 {
+        margin-bottom: 32px;
+    }
+}
+.earphone-details {
+    @include some-details;
+    height: 200px;
+    background-image: url(../assets/home/mobile/image-earphones-yx1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.earphone-more-details {
+    width: 87%;
+    margin-inline: auto;
+    margin-bottom: 120px;
+    padding: 4.1rem 0 4.1rem 2.4rem;
+    border-radius: 8px;
+    background-color: $color-grey;
+    h4 {
+        margin-bottom: 32px;
+    }
+    a {
+        padding: 1.4rem 2.95rem;
+        color: $color-black;
+        border: 1px solid $color-black;
+        &:hover {
+            color: $color-white;
+            background-color: $color-black;
+        }
+    }
+}
+
+@media only screen and (min-width: 576px) {
+    .speaker-details {
+        width: 90%;
+        padding: 52px 0 62px 0;
+        margin-bottom: 32px;
+        img {
+            width: 195.2px;
+        }
+        h4{
+            margin-top: 64px;
+            font-size: 5.6rem;
+            line-height: 5.8rem;
+            letter-spacing: 0.2rem;
+        }
+        p {
+            width: 349px;
+            margin-inline: auto;
+            margin-bottom: 40px;
+        }
+    }
+    .speaker-z7-details {
+        width: 90%;
+        padding: 10.1rem 4.2rem;
+        margin-bottom: 32px;
+        background-image: url(../assets/home/tablet/image-speaker-zx7.jpg);
+    }
+    .wrapper{
+        width: 90%;
+        margin-inline: auto;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 96px;
+        .earphone-details, .earphone-more-details{
+            width: 49%;
+            height: 320px;
+            margin: 0;
+        }
+        .earphone-more-details {
+            padding: 10.1rem 0 0 4.1rem;
+        }
+    }
+}
+
+
+
+
+@media only screen and (min-width: 992px) {
+    .speaker-details {
+        @include width-for-desktop;
+        padding: 96px 95px 0 117px;
+        margin-bottom: 48px;
+        display: flex;
+        justify-content: space-between;
+        height: 560px;
+        overflow: hidden;
+        background-position: revert;
+        img {
+            width: 395px;
+        }
+        .speaker-div {
+    
+            width: 349px;
+            
+        }
+        h4{
+            margin-top: 37px;
+            text-align: left;
+        }
+        p {
+            text-align: left;
+            padding: 0;
+        }
+        .center {
+            text-align: left;
+        }
+    }
+    .speaker-z7-details {
+        @include width-for-desktop;
+        margin-bottom: 48px;
+        padding: 10.1rem 9.5rem;
+        background-image: url(../assets/home/desktop/image-speaker-zx7.jpg);
+    }
+
+    .wrapper{
+        @include width-for-desktop;
+        margin-bottom: 200px;
+        .earphone-more-details {
+            padding: 10.1rem 0 0 6.5rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px){
+    .speaker-details {
+        padding: 96px 0 0 20px;
+        background-position: revert;
+        img {
+            width: 310px;
+        }
+    }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1300px){
+    .speaker-details {
+        padding: 96px 95px 0 20px;
+    }
+}

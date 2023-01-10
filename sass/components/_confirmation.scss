@@ -1,0 +1,115 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+#confirmation{
+    width: 87%;
+    position: absolute;
+    background-color: $color-white;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 32px;
+    border-radius: 8px;
+    z-index: 25;
+    &>img{
+        margin-bottom: 23px;
+    }
+    .thankful-note {
+        @include fonts(2.4rem, 2.8rem, 0.1rem, 700, uppercase);
+        margin-bottom: 16px;
+    }
+    .email-confirmation{
+        @include fonts(1.5rem, 2.5rem, normal, 500, none);
+        color: rgba($color-black, 0.5) ;
+        margin-bottom: 24px;
+    }
+    #some-details{
+        border-radius: 8px;
+        margin-bottom: 24px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        .confirmation-details{
+            padding: 24px;
+            background-color: #F1F1F1;
+        }
+    }
+    .confirmation-item{
+        display: flex;
+        align-items: center;
+        &:not(:last-child){
+            margin-bottom: 20px;
+        };
+        p:last-of-type{
+            margin-left: auto;
+            @include fonts(1.5rem, 2.5rem, normal, 700, none);
+            color:rgba($color-black, 0.5);
+        }
+        img{
+            width:50px;
+            margin-right: 16px;
+        }
+        div p:first-child{
+            @include fonts(1.5rem, 2.5rem, normal, 700, none);
+        }
+        div p:last-child{
+            @include fonts(1.4rem, 2.5rem, normal, 700, none);
+            color:rgba($color-black, 0.5);
+        }
+    }
+    .grand-total{
+        background-color: $color-black;
+        padding: 15px 24px 24px 24px;    
+        p:first-child{
+            @include fonts(1.5rem, 2.5rem, normal, 500, none);
+            color: rgba($color-white, 0.5);
+            margin-bottom: 8px;
+        }
+        p:last-child{
+            @include fonts(1.8rem, 2.5rem, normal, 700, none);
+            color: $color-white;
+        }
+    }
+    .center a{
+        display: inline-block;
+        width: 100%;
+        padding: 15px 0 15px 0;
+        background-color: $color-primary;
+        @include fonts(1.3rem, 1.8rem, 0.1rem, 700, uppercase);
+        color: $color-white;
+        &:hover{
+            background-color: $color-secondary;
+        }
+    }
+}
+
+@media only screen and (min-width: 576px){
+    #confirmation{
+        width: 80%;
+        max-width: 600px;
+        top: 130px;
+        #some-details{
+            flex-direction: row;
+            .confirmation-details {
+                width: 70%;
+            }
+        }
+        .grand-total{
+            width: 30%;
+            padding: 24px;
+        }
+    }
+}
+
+@media only screen and (min-width: 992px){
+    #confirmation{
+        top: 150px;
+        padding: 48px;
+        img{
+            margin-bottom: 33px;
+        }
+        .thankful-note{
+            @include fonts(3.2rem, 3.6rem, 0.1rem, 700, uppercase);
+        }
+    }
+}

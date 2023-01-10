@@ -1,0 +1,82 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+.shared-part-image {
+    height: 300px;
+    width: 87%;
+    margin-inline: auto;
+    margin-bottom: 40px;
+    @include background-image;
+    background-image: url(../assets/shared/mobile/image-best-gear.jpg);
+}
+
+.shared-part-details {
+    width: 87%;
+    margin-inline: auto;
+    h5 {
+        @include fonts(2.8rem, 3.8rem, 0.1rem, 700, uppercase);
+        text-align: center;
+        margin-bottom: 32px;
+        span {
+            color: $color-primary;
+        }
+    }
+    p {
+        opacity: 50%;
+        text-align: center;
+    }
+}
+
+.shared-section {
+    margin-bottom: 120px;
+}
+
+@media only screen and (min-width:576px){
+    .shared-section{
+        margin-bottom: 96px;
+    }
+    .shared-part-image {
+        width: 90%;
+        margin-bottom: 63px;
+        background-image: url(../assets/shared/tablet/image-best-gear.jpg);
+       
+    }
+    .shared-part-details {
+        width: 90%;
+        h5 {
+            @include fonts(4rem, 4.4rem, 0.143rem, 700, uppercase);
+            text-align: center;
+            padding: 0 50px;
+        }
+        p {
+            padding: 0 50px;
+            text-align: center;
+        }
+    }
+}
+
+@media only screen and (min-width:992px){
+    .shared-section{
+        margin-bottom: 200px;
+        @include display-flex(row, space-between, center);
+        @include width-for-desktop;
+        margin-inline: auto;
+    }
+    .shared-part-image {
+        width: 49%;
+        height: 588px;
+        order: 2;
+        margin: 0;
+        background-image: url(../assets/shared/desktop/image-best-gear.jpg);
+       
+    }
+    .shared-part-details {
+        width: 40%;
+        order: 1;
+        margin: 0;
+        h5,p {
+            text-align: left;
+            padding: 0;
+        }
+    }
+}

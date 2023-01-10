@@ -1,0 +1,143 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+footer {
+    background-color: $color-black-lighter;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 101px;
+        height: 4px;
+        background-color: $color-primary;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    img[alt="logo"]{
+        padding-top: 53px;
+        margin-bottom: 47px;
+    }
+    ul {
+        margin-bottom: 48px;
+    }
+    li {
+        text-align: center;
+        margin-bottom: 16px;
+        a {
+            color: $color-white;
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+    p {
+        text-align: center;
+        opacity: 50%;
+        color: $color-white;
+        @include fonts(1.5rem, 2.5rem, normal, 700, none);
+        margin-bottom: 48px;
+    }
+    .description {
+        padding: 0 2.4rem;        
+        @include fonts(1.5rem, 2.5rem, normal, 500, none);
+    }
+    .socials {
+        @include display-flex(row, center, center);
+        gap:1.6rem;
+        padding-bottom: 38px;
+        img:hover {
+            filter: invert(0.6) sepia(5) saturate(30) hue-rotate(3deg) brightness(0.8);
+        }
+    }
+}
+
+@media only screen and (min-width: 576px){
+    footer {
+        padding-bottom: 4px;
+        &::before {
+            left: 5%;
+            transform: none;
+        }
+        .footer-container{
+            width: 90%;
+            margin-inline: auto;
+            display: grid;
+            grid-template-areas: 
+            "A A"
+            "B B"
+            "C C" 
+            "D E ";
+            li a{
+                line-height: 2.5rem;
+            }
+            div.center{
+                grid-area: A;
+                justify-self: left;
+            }
+            .description {
+                grid-area: C;
+                padding: 0;
+                text-align: left;
+            }
+            p{
+                justify-self: left;
+            }
+            .socials {
+                justify-self: right;
+            }
+        }
+        ul {
+            display: flex;
+            column-gap: 34px;
+            grid-area: B;
+            justify-self: left;
+            margin-bottom: 32px;
+        }
+    }
+}
+
+@media only screen and (min-width: 992px){
+    footer {
+        padding-bottom: 17px;
+        &::before {
+            left: 11.5%;
+        }
+        .footer-container{
+            @include width-for-desktop;
+            grid-template-areas: 
+            "A B"
+            "C D" 
+            "E E";
+            li a{
+                line-height: 2.5rem;
+            }
+            div.center{
+                grid-area: A;
+                justify-self: left;
+            }
+            .description {
+                grid-area: C;
+                padding: 0;
+                text-align: left;
+                width: 76%;
+            }
+            p{
+                justify-self: left;
+            }
+            .socials {
+                justify-self: right;
+                grid-area: D;
+                align-self: end;
+            }
+            .copyright{
+                grid-area: E;
+            }
+        }
+        ul {
+            grid-area: B;
+            align-self: end;
+        }
+    }
+    
+}

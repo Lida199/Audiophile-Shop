@@ -1,0 +1,131 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+#cart {
+    width: 87%;
+    max-width: 377px;
+    padding: 32px 29px 31px 28px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: $color-white;
+    top: 90px;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 40;
+    .cart-title{
+        @include display-flex(row, space-between, center);
+        margin-bottom: 31px;
+        button{
+            border: none;
+            background-color: transparent;
+            text-decoration: underline;
+            padding: 0;
+            cursor: pointer;
+            color: rgba($color-black, 0.5);
+            @include fonts(1.5rem, 2.5rem, normal, 500, none);
+            &:hover{
+                color: $color-primary;
+            }
+        }
+    }
+    h1{
+        @include fonts(1.8rem, 2.46rem, 0.13rem, 700, uppercase);
+    }
+    .cart-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 24px;
+        .cart-button{
+            margin-left: auto;
+        }
+        button{
+            background-color: $color-grey;
+            @include fonts(1.3rem, 1.8rem, 0.1rem, 700, none);
+            border: none;
+            cursor: pointer;
+            .remove, .add{
+                color: rgba($color-black, 0.25);
+                display: inline-block;
+                padding: 7px 12px;
+                &:hover{
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+    img{
+        width:64px;
+        height: 64px;
+        border-radius: 8px;
+        margin-right: 16px;
+    }
+    h2{
+        @include fonts(1.5rem, 2.5rem, normal, 700, uppercase);
+    }
+    p{
+        @include fonts(1.4rem, 2.5rem, normal, 700, none);
+        color: rgba($color-black, 0.5);
+
+    }
+    .cart-total{
+        margin-top: 8px;
+        @include display-flex(row, space-between, center);
+        margin-bottom: 24px;
+        @include fonts(1.5rem, 2.5rem, normal, 700, uppercase);
+        color: rgba($color-black, 0.5);
+        span{
+            @include fonts(1.8rem, 2.5rem, normal, 700, none);
+            color: $color-black;
+        }
+    }
+    .center {
+        a{
+            display: inline-block;
+            width:100%;
+            padding: 15px 0;
+            background-color: $color-primary;
+            cursor: pointer;
+            @include fonts(1.3rem, 1.8rem, 0.1rem, 700, uppercase);
+            color: $color-white;
+            &:hover{
+                background-color: $color-secondary;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 340px){
+    #cart{
+        padding: 32px 10px 31px 10px;
+        img{
+            width: 50px;
+            height: 50px;
+            margin-right: 8px;
+        }
+        .cart-item button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
+
+
+@media only screen and (min-width:576px){
+    #cart{
+        top: 114px;
+        left: 95%;
+        transform: translate(-100%);
+    }
+}
+
+
+@media only screen and (min-width:992px){
+    #cart{
+        top: 122px;
+        left: 88.5%;
+        transform: translate(-100%);
+    }
+}

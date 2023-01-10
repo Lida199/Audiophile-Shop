@@ -1,0 +1,206 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+header {
+    &.with-background{
+        background-image: url(../assets/home/mobile/image-header.jpg);
+        @include media(md){
+            background-image: url(../assets/home/tablet/image-header.jpg);
+        }
+        @include media(lg){
+            background-image: url(../assets/home/desktop/image-hero.jpg);
+        }
+    }
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;        
+    background-color:#191919;
+}
+#burger-menu, #logo, #cart-logo {
+    cursor: pointer;
+}
+#burger-menu {
+    @include media(lg){
+        display: none;
+    }
+}
+nav {
+    @include display-flex(row, space-between, center);
+    width: 100%;
+    margin-inline: auto;
+    padding: 32px 6.5%;  
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+    z-index: 5;
+    @include media(md){
+        width: 90%;
+        padding: 32px 0;
+    }
+    @include media(lg){
+        @include width-for-desktop;
+    }
+}
+li {
+    list-style: none;
+}
+.nav-menu {
+    display: none;
+    .active {
+        color: $color-primary;
+    }
+    @include media(lg){
+        display: flex;
+    }
+    li a {
+        @include fonts(1.3rem, 2.5rem, 0.2rem, 700, none);
+        color: $color-white;
+        &:not(li:last-child a){
+            margin-right: 34px;
+        }
+        &:hover {
+            color: $color-primary;
+        }
+    }
+}
+.nav-menu-mobile {
+    display: none;
+}
+.nav-menu-mobile.active {
+    display: block;
+    background-color: white;
+    width: 100%;
+    position: absolute;
+    padding: 84px 0 35px 0;
+    top: 90px;
+    border-radius: 0px 0px 8px 8px;
+    left: 0;
+    z-index: 40;
+    @include media(md){
+        padding: 108px 5% 67px 5%;
+        display: flex;
+        justify-content: space-between;
+        li {
+            width: 33%;
+        }
+        .container-for-menu {
+            width: 100%;
+        }
+    }
+    @include media(lg){
+        display: none;
+    }
+}
+
+
+.nav-menu-mobile li:not(.last-child) {
+    margin-bottom: 68px;
+    @include media(md){
+        margin-bottom: 0;
+    }
+}
+.nav-menu-mobile .container-for-menu h3 {
+    padding-top: 88px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size:1.5rem;
+    line-height: 2rem;
+    letter-spacing: 0.107rem;
+    text-align: center;
+    margin-bottom: 17px;
+}
+
+.center {
+    text-align: center;
+}
+
+.main-image{
+    width: 138px;
+    position: absolute;
+    bottom: 40%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+.container {
+    @include media(lg){
+        @include width-for-desktop;
+        margin-inline: auto;
+    }
+}
+.more-info {
+    width: 87%;
+    margin-inline: auto;
+    margin-top: 108px;
+    @include media(md){
+        margin-top: 126px;
+        width: 379px;
+    }
+    a{
+        margin-bottom: 112px;
+        @include media(md){
+            margin-bottom: 167px;
+        }
+    }
+
+    @include media(lg){
+        margin-left: 0;
+    }
+    div.center {
+        @include media(lg){
+            text-align: left;
+        }
+    }
+}
+
+.more-info h1 {
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    margin-bottom: 16px;
+    @include media(md){
+        margin-bottom: 24px;
+    }
+    @include media(lg){
+        text-align: left;
+    }
+}
+
+.more-info h2 {
+    @include fonts(3.6rem, 4rem, 0.12rem, 700, uppercase);
+    color: $color-white;
+    text-align: center;
+    margin-bottom: 24px;
+    @include media(md){
+        @include fonts(5.6rem, 5.8rem, 0.2rem, 700, uppercase);
+    }
+    @include media(lg){
+        text-align: left;
+    }
+}
+
+.more-info p {
+    color: rgba(255,255,255,0.75);
+    text-align: center;
+    margin-bottom: 28px;
+    @include media(md){
+        margin-bottom: 40px;
+        padding: 0 1.5rem;
+    }
+    @include media(lg){
+        text-align: left;
+        padding: 0 3rem 0 0 ;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 991px){
+    nav {
+        justify-content: inherit;
+        #burger-menu{
+            margin-right: 42px;
+        }
+        div:has(#cart-logo){
+            margin-left: auto;
+        }
+    }
+
+}

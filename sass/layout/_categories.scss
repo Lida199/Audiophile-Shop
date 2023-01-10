@@ -1,0 +1,71 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+.categories {
+    padding: 89px 0 120px 0;
+}
+.container-for-menu {
+    width: 87%;
+    position: relative;
+    margin-inline: auto;
+    background-color: #F1F1F1;
+    border-radius: 8px;
+    padding-bottom: 22px;
+}
+
+.categories .container-for-menu:not(:last-child) {
+    margin-bottom: 68px;
+}
+.categories .container-for-menu {
+    padding-bottom: 22px;
+    h3 {
+        padding-top: 88px;
+        font-family: 'Manrope', sans-serif;
+        font-weight: 700;
+        font-size:1.5rem;
+        line-height: 2rem;
+        letter-spacing: 0.107rem;
+        text-align: center;
+        margin-bottom: 17px;
+    }
+}
+
+@media only screen and (min-width: 576px) {
+    .categories {
+        width: 90%;
+        padding: 148px 0 96px 0;
+        margin-inline: auto;
+        @include display-flex(row, space-between, baseline);
+    }
+    .categories .container-for-menu{
+        width: 32%;
+        margin: 0;
+    }
+    .categories .container-for-menu:not(:last-child) {
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .categories {
+        @include width-for-desktop;
+        padding: 200px 0 168px 0;
+    }
+    
+    .categories .container-for-menu {
+        padding-bottom: 30px;
+        img {
+            bottom: 50%;
+        }
+        .main-image {
+            width: 175px;
+        }
+        h3{
+            padding-top: 116px;
+            font-size: 1.8rem;
+            line-height: 2.5rem;
+            letter-spacing: 0.129rem;
+            margin-bottom: 15px;
+        }
+    }
+}

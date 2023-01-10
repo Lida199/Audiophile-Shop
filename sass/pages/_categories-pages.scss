@@ -1,0 +1,177 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.category-name {
+    h1{
+        @include fonts(2.8rem, 3.8rem, 0.2rem, 700, uppercase);
+        color: $color-white;
+        text-align: center;
+        padding: 32px 0;
+    }
+}
+.category-description{
+    width: 87%;
+    margin-inline: auto;
+    margin-top: 64px;
+}
+.category-item {
+    margin-bottom: 120px;
+
+    &:last-child{
+        margin-bottom: 79px;
+    }
+    .category-image{
+        width: 100%;
+        height: 352px;
+        @include background-image;
+    }
+    .earphone-image{
+        background-image: url(../assets/product-yx1-earphones/desktop/image-category-page-preview.jpg);
+    }
+    .headphone-image{
+        background-image: url(../assets/shared/desktop/image-xx99-mark-two-headphones.jpg);
+    }
+    .speaker-image {
+        background-image: url(../assets/shared/desktop/image-zx9-speaker.jpg);
+    }
+    .speaker-image2 {
+        background-image: url(../assets/shared/desktop/image-zx7-speaker.jpg);
+    }
+    .headphone-image2{
+        background-image: url(../assets/shared/desktop/image-xx99-mark-one-headphones.jpg);
+    }
+    .headphone-image3{
+        background-image: url(../assets/shared/desktop/image-xx59-headphones.jpg);
+    }
+    .category-information {
+        margin-top: 32px;
+        h2{
+            color: $color-primary;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        h3 {
+            @include fonts(2.8rem, 3.8rem, 0.1rem, 700, uppercase);
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        p {
+            @include fonts(1.5rem, 2.5rem, normal, 500, none);
+            opacity: 50%;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+    }
+}
+@media only screen and (min-width: 576px){
+    .category-name {
+        h1{
+            @include fonts(4rem, 4.4rem, 0.15rem, 700, uppercase);
+            padding: 105px 0 97px 0;
+        }
+    }
+   
+    .category-description{
+        width: 90%;
+        margin-inline: auto;
+        margin-top: 120px;
+    }
+    .category-item {
+        &:last-child{
+            margin-bottom: 72 px;
+        }
+        .earphone-image{
+            background-image: url(../assets/product-yx1-earphones/tablet/image-category-page-preview.jpg);
+        }
+        .category-image{
+            height: 352px;
+        }
+        .speaker-image {
+            background-image: url(../assets/shared/mobile/image-zx9-speaker.jpg);
+        }
+        .speaker-image2 {
+            background-image: url(../assets/shared/mobile/image-zx7-speaker.jpg);
+        }
+        .headphone-image{
+            background-image: url(../assets/shared/mobile/image-xx99-mark-two-headphones.jpg);
+        }
+        .headphone-image2{
+            background-image: url(../assets/shared/mobile/image-xx99-mark-one-headphones.jpg);
+        }
+        .headphone-image3{
+            background-image: url(../assets/shared/mobile/image-xx59-headphones.jpg);
+        }
+        .category-information {
+            margin-top: 52px;
+            h2{
+                margin-bottom: 16px;
+            }
+            h3 {
+                @include fonts(4rem, 4.4rem, 0.143rem, 700, uppercase);
+                margin-bottom: 32px;
+            }
+            p {
+                padding: 0 35px 0 35px;
+                margin-bottom: 24px;
+            }
+        }
+    }
+    
+}
+@media only screen and (min-width: 992px){
+    .category-description{
+        @include width-for-desktop;
+        margin-inline: auto;
+        margin-top: 160px;
+    }
+    .category-item {
+        @include display-flex(row, space-between, center);
+        &:nth-child(2n){
+            .category-image{
+                order: 2;
+            }
+            .category-information{
+                order: 1;
+            }
+        }
+        &:not(:last-child){
+            margin-bottom: 150px;
+        }
+        &:last-child{
+            margin-bottom: 13px;
+        }
+        .category-image{
+            height: 560px;
+            width: 50%;
+        }
+        .earphone-image{
+            background-image: url(../assets/product-yx1-earphones/desktop/image-category-page-preview.jpg);
+        }
+        .headphone-image{
+            background-image: url(../assets/shared/desktop/image-xx99-mark-two-headphones.jpg);
+        }
+        .headphone-image2{
+            background-image: url(../assets/shared/desktop/image-xx99-mark-one-headphones.jpg);
+        }
+        .headphone-image3{
+            background-image: url(../assets/shared/desktop/image-xx59-headphones.jpg);
+        }
+        .speaker-image {
+            background-image: url(../assets/shared/desktop/image-zx9-speaker.jpg);
+        }
+        .speaker-image2 {
+            background-image: url(../assets/shared/desktop/image-zx7-speaker.jpg);
+        }
+        .category-information {
+            margin-top: 0;
+            width: 40%;
+            h2,h3,p, div.center{
+                text-align: left;
+            }
+            p{
+                padding: 0;
+            }
+
+        }
+    }    
+}

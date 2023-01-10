@@ -1,0 +1,37 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+.btn {
+    cursor: pointer;
+    @include fonts(1.3rem, 1.8rem, 0.1rem, 700, uppercase);
+    display: inline-block;
+    &.btn-primary {
+        padding: 1.5rem 3.05rem;
+        background-color: $color-primary;
+        color: $color-white;
+        &:hover {
+            background-color: $color-secondary;
+        }
+    }
+    &.btn-secondary {
+        padding: 1.4rem 2.95rem;
+        background-color: $color-white;
+        color: $color-black;
+        border: 1px solid $color-black;
+        &:hover {
+            background-color: $color-black;
+            color: $color-white;
+        }
+    }
+    &.btn-link {
+        background-color: none;
+        color: rgba($color-black, 0.5);
+        display: inline-block;
+        img {
+            margin-left: 1.4rem;
+        }
+        &:hover {
+            color: $color-primary;
+        }
+    }
+}

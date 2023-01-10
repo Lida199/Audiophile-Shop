@@ -1,0 +1,44 @@
+@mixin fonts($font-size, $line-height, $letter-spacing, $font-weight, $text-transform) {
+    font-family: 'Manrope', sans-serif;
+    font-size: $font-size;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+    font-weight: $font-weight;
+    text-transform: $text-transform;
+}
+
+@mixin some-details {
+    width: 87%;
+    margin-inline: auto;
+    margin-bottom: 24px;
+    border-radius: 8px;
+}
+
+@mixin media($breakpoint){
+    @media only screen and (min-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+    }
+}
+@mixin width-for-mobile{
+    width: 87%;
+    margin-inline: auto;
+}
+
+@mixin width-for-desktop{
+    width: 77%;
+    max-width: 1200px;
+}
+
+@mixin background-image{
+    border-radius: 8px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@mixin display-flex($flex-direction, $justify-content, $align-items){
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
